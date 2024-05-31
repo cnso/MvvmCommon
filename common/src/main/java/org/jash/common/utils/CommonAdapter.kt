@@ -31,5 +31,13 @@ class CommonAdapter<D>(val layout:(D) -> Pair<Int, Int>, val data:MutableList<D>
         data.clear()
         notifyItemRangeRemoved(0, size)
     }
+    fun removeIf(filter:(D) -> Boolean):Int {
+        val position = data.indexOfFirst(filter)
+        if (position != -1) {
+            data.removeAt(position)
+            notifyItemRemoved(position)
+        }
+        return position
+    }
 }
 class CommonViewHolder(val binding:ViewDataBinding):ViewHolder(binding.root)
