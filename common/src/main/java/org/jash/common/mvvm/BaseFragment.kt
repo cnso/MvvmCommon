@@ -1,4 +1,4 @@
-package org.jash.shop2201.mvvm
+package org.jash.common.mvvm
 
 import android.os.Bundle
 import android.view.LayoutInflater
